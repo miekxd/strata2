@@ -133,7 +133,7 @@ const Dashboard = () => {
           <div className="bg-white rounded-lg shadow p-5 border-l-4 border-yellow-500">
             <div className="flex justify-between items-center mb-3">
               <h3 className="text-lg font-medium text-gray-800">Maintenance</h3>
-              <Tool className="h-6 w-6 text-yellow-500" />
+              <Wrench className="h-6 w-6 text-yellow-500" />
             </div>
             <div className="grid grid-cols-2 gap-2">
               <div>
@@ -276,7 +276,7 @@ const Dashboard = () => {
                 <span className="text-sm text-gray-600">Open</span>
               </div>
               <div className="border rounded-lg p-3 bg-yellow-50 flex flex-col items-center">
-                <Tool className="h-8 w-8 text-yellow-600 mb-2" />
+                <Wrench className="h-8 w-8 text-yellow-600 mb-2" />
                 <span className="text-lg font-bold text-gray-800">{maintenanceStats.inProgress}</span>
                 <span className="text-sm text-gray-600">In Progress</span>
               </div>
