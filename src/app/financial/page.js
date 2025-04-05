@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
 import { 
   Home, 
   CreditCard, 
@@ -11,6 +15,7 @@ import {
   Building,
   AlertCircle,
   Calendar,
+<<<<<<< HEAD
   Save,
   Search
 } from 'lucide-react';
@@ -22,6 +27,16 @@ const FinancialManagement = () => {
   // Get URL search parameters
   const searchParams = useSearchParams();
 
+=======
+
+  PlusCircle,
+  Save
+} from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+
+const FinancialManagement = () => {
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
   // State for fund balances
   const [funds, setFunds] = useState({
     adminFund: 125842.00,
@@ -42,9 +57,12 @@ const FinancialManagement = () => {
     { id: 3, description: 'Lobby Renovation Project', amount: 65000.00, dueDate: '2025-07-01', fund: 'capital' }
   ]);
 
+<<<<<<< HEAD
   // State for search results
   const [searchResults, setSearchResults] = useState([]);
 
+=======
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
   // Format money
   const formatMoney = (amount) => {
     return new Intl.NumberFormat('en-AU', {
@@ -53,6 +71,7 @@ const FinancialManagement = () => {
     }).format(amount);
   };
 
+<<<<<<< HEAD
   // Load search results if present in URL params
   useEffect(() => {
     if (searchParams.get('success') === 'true' && searchParams.get('status') === '200') {
@@ -65,6 +84,8 @@ const FinancialManagement = () => {
     }
   }, [searchParams]);
 
+=======
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
@@ -124,7 +145,11 @@ const FinancialManagement = () => {
           <div className="bg-white rounded-lg shadow p-5 border-l-4 border-blue-500">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-medium text-gray-800">Administration Fund</h3>
+<<<<<<< HEAD
               <DollarSign className="h-6 w-6 text-blue-500" />
+=======
+              <CreditCard className="h-6 w-6 text-blue-500" />
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
             </div>
             <p className="text-3xl font-bold text-gray-900">{formatMoney(funds.adminFund)}</p>
             <p className="text-sm text-gray-500 mt-2">Last updated: April 1, 2025</p>
@@ -215,6 +240,7 @@ const FinancialManagement = () => {
           </div>
         </div>
         
+<<<<<<< HEAD
         {/* POST Form */}
         <div className="bg-white rounded-lg shadow overflow-hidden mb-6">
           <div className="px-5 py-4 bg-gray-50 border-b border-gray-200">
@@ -234,12 +260,25 @@ const FinancialManagement = () => {
             )}
             
             <form method="post" action="/api/transactions" className="space-y-4">
+=======
+        {/* Add Transaction Form */}
+        <div className="bg-white rounded-lg shadow overflow-hidden">
+          <div className="px-5 py-4 bg-gray-50 border-b border-gray-200 flex items-center">
+            <PlusCircle className="h-5 w-5 text-green-500 mr-2" />
+            <h3 className="text-lg font-medium text-gray-800">Record New Transaction</h3>
+          </div>
+          <div className="p-5">
+            <form className="space-y-4">
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
               <div>
                 <label htmlFor="description" className="block text-sm font-medium text-gray-700">Description</label>
                 <input
                   type="text"
                   id="description"
+<<<<<<< HEAD
                   name="description"
+=======
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-black"
                   placeholder="Enter transaction description"
                 />
@@ -255,7 +294,10 @@ const FinancialManagement = () => {
                     <input
                       type="number"
                       id="amount"
+<<<<<<< HEAD
                       name="amount"
+=======
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
                       step="0.01"
                       className="pl-7 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-black"
                       placeholder="0.00"
@@ -268,12 +310,16 @@ const FinancialManagement = () => {
                   <input
                     type="date"
                     id="date"
+<<<<<<< HEAD
                     name="date"
+=======
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-black"
                   />
                 </div>
               </div>
               
+<<<<<<< HEAD
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="fund" className="block text-sm font-medium text-gray-700">Fund</label>
@@ -298,6 +344,28 @@ const FinancialManagement = () => {
                     <option value="income">Income</option>
                   </select>
                 </div>
+=======
+              <div>
+                <label htmlFor="fund" className="block text-sm font-medium text-gray-700">Fund</label>
+                <select
+                  id="fund"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-black"
+                >
+                  <option value="admin">Administration Fund</option>
+                  <option value="capital">Capital Works Fund</option>
+                </select>
+              </div>
+              
+              <div>
+                <label htmlFor="type" className="block text-sm font-medium text-gray-700">Transaction Type</label>
+                <select
+                  id="type"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-black"
+                >
+                  <option value="expense">Expense</option>
+                  <option value="income">Income</option>
+                </select>
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
               </div>
               
               <div className="flex justify-end">
@@ -312,6 +380,7 @@ const FinancialManagement = () => {
             </form>
           </div>
         </div>
+<<<<<<< HEAD
         
         {/* GET Form */}
         <div className="bg-white rounded-lg shadow overflow-hidden mb-6">
@@ -401,6 +470,12 @@ const FinancialManagement = () => {
       
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-4 mt-6">
+=======
+      </main>
+      
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-6 mt-6">
+>>>>>>> 9f5ae35cb0f8aa255c12524e1abf1b9aad7ad8e9
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <p className="text-sm">&copy; 2025 StrataSphere. All rights reserved.</p>
